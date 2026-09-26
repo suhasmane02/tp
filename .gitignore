@@ -1,0 +1,7 @@
+.env
+__pycache__/
+.pytest_cache/
+*.pyc
+data/raw/youtube/*
+!data/raw/youtube/.gitkeep
+backups/
