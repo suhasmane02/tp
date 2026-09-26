@@ -7,8 +7,6 @@ A local-first Docker application for a Marathi/Maharashtra family-vlog channel. 
 2. Download/clone this project, then double-click **`install.bat`**. The installer verifies Docker, creates a local `.env` with a random application secret, builds the containers, waits for `/ready`, and opens http://localhost:8000.
 3. On the first screen, click **Load demo data** to use the whole dashboard immediately without Google credentials. Add Google credentials to `.env` later to synchronize live channels.
 
-If the installer remains at **Waiting for the dashboard** for more than three minutes, it automatically prints the application log. You can also run `logs.bat`; after applying the current update, double-click `install.bat` again.
-
 The installer is idempotent: double-click it again after upgrades. `start.bat` starts an existing installation, `stop.bat` stops it, `restart.bat` restarts it, and `logs.bat` shows diagnosis logs. If Docker Desktop is not installed/running, the installer gives the exact next step instead of partially installing anything.
 
 Linux/macOS: `cp .env.example .env && docker compose up -d --build`. Check services with `docker compose ps`; logs are `docker compose logs -f app`.

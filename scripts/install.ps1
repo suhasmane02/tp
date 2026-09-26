@@ -33,10 +33,8 @@ for ($i=0; $i -lt 36; $i++) {
   Start-Sleep -Seconds 5
 }
 if (-not $ready) {
-  Write-Host "The dashboard did not become ready. Showing the application logs below:" -ForegroundColor Yellow
-  docker compose ps
-  docker compose logs --tail=100 app
-  Write-Host "Fix the reported error, then double-click install.bat again."
+  Write-Host "The containers started but the dashboard is not ready yet." -ForegroundColor Yellow
+  Write-Host "Run logs.bat to see startup logs, then open http://localhost:8000 when ready."
   exit 1
 }
 Start-Process 'http://localhost:8000'
